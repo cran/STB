@@ -1,0 +1,16 @@
+728a7f9988412df172b43c8b5ddc6f48 *DESCRIPTION
+abc5470e4066e6b1028d284a04f891bf *NAMESPACE
+0ec21e8cc3198c40194bb55e0202796b *R/stb.R
+d08b11c5f8bf3d34411f2028246a1c0a *inst/ChangeLog.txt
+11c4a4ac3ba45f4baef8c9939d5f7177 *man/SASquantile.Rd
+74f05c625bd1e7b0c33876621bba5500 *man/STB-Package.Rd
+e055605c4f549a15c4fceb9eb231439b *man/fastSTB.Rd
+d7ef113a32fe2245dfea4daf32c87e25 *man/getSTB.Rd
+247cd7e44968fefad3984a6119e3b680 *man/plot.STB.Rd
+7c3ba264efba1db3f192129ee28e6706 *man/plot.stbVCA.Rd
+2b533a07e32d37931961af673cf18505 *man/rankSTB.Rd
+24de07c21ae78452c6dd7b029175fb07 *man/stb.Rd
+da69db3da9d14997aa93d35cc3aeb195 *man/stb.VCA.Rd
+80e59c6dcf40ca482dcf84710808be6e *man/stb.default.Rd
+95e3011e37d9dde0d75f3a3819b2acd3 *src/Makevars
+0f9e2a01342caca1ec946c560692ba8c *src/stb.c

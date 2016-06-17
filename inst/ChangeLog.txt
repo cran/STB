@@ -1,0 +1,66 @@
+Version 0.6.2
+-------------
+
+- removed function arguments for SAS- and R-quantiles, 'type=2' (the default) is equivalent to SAS PCTLDEF5 which is
+  used in the C-implementation
+- documentation revised and new examples added 
+- CRAN release candidate version
+
+
+Version 0.6.1
+-------------
+
+- removed source-code snippet writing status textfile to U:/Test/..., which had been forgotten
+  to remove when building last package version
+
+
+Version 0.6
+-------------
+
+- DLLs now correctly loaded for '1386' vs 'x64' architectures, in previous version the 'i386' DLL was loaded
+  every time, which caused an error
+- parallel-processing is now possible via R-package 'parallel' and OpenMP on C-level
+- the rank-based algorithm for construction of STBs was added and is used as the default-method; it was corrected
+  compared to the published description
+
+
+Version 0.5
+-----------
+
+- function 'stb.VCA' added, computing simultaneous tolerance bounds for random effects or residuals of 
+  'VCA' objects created with R-package 'VCA'
+- function 'plot.stbVCA' added for plotting 'stbVCA' objects returned by function 'stb.VCA'
+
+
+Version 0.4.1
+-------------
+
+- new implementation of function 'SASquantile' used, fixing a bug computing quantiles among integer values
+- (rolnyv) SASquantile-function: 1st argument changed from 'v' to 'x' to be in line with
+  standard R-function definitions
+- in function 'SASquantile' argument 'tol' was added controlling what the function interprets 
+  as equivalent to zero when applying the SAS PCTLDEF5 algorithm fixing a bug reproducible using:
+    SASquantile(1:100, .75)
+    SASquantile(1:100, seq(.05, .95, .05))["75%"]
+
+
+Version 0.4
+-----------
+
+- adapted to be compatible with R versions >= 3.0.0
+- there seems to be a problem with X64-DLL, which might result in errors calling C-code in 64-Bit R-environments 
+  (needs to be fixed in the future)
+
+
+Version 0.3
+-----------
+
+- documentation fixed
+- package revised to pass R CMD check
+
+
+Version 0.2
+-----------
+
+- it is now possible to add the simultaneous tolerance band to an existing plot (add=TRUE)
+- documentation was revised

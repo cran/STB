@@ -1,0 +1,38 @@
+### Generics and functions defined in this package
+
+export(	
+	"fastSTB",
+	"getSTB",
+	"plot.STB",
+	"plot.stbVCA",
+	"SASquantile",
+	"stb",
+	"stb.default",
+	"stb.VCA",
+	"rankSTB"
+      )
+      
+import( 
+	"graphics",
+	"grDevices",
+	"stats",
+	"methods",
+	"Matrix",
+	"parallel",
+	"VCA"
+)
+
+importFrom("utils", "setTxtProgressBar", "txtProgressBar")
+
+### exported classes
+
+exportClasses( 	"STB"   )
+
+S3method(stb, default)
+S3method(plot, STB)
+S3method(stb, VCA)
+S3method(plot, stbVCA)
+
+### DLL export
+
+useDynLib(STB)
