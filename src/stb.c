@@ -12,8 +12,9 @@
  *					82377 Penzberg / Germany													*
  *																								*																										*
  *				  																			    *
- * Last modified:	2016-06-07															        *
- *																								*
+ * Last modified:	2016-06-30															        *
+ *																								*				
+ * - header file "omp.h" now included conditionally on the definition of "_OPENMP"				*
  * - added OpenMP based parallelization to coverage-computation and STB-computation             *	
  * - removed all unnecessary content before putting it on CRAN          			            *
  *																								*
@@ -26,7 +27,9 @@
 #include <assert.h>
 #include <R.h>
 #include <Rinternals.h>
+#ifdef _OPENMP				/* include omp.h conditionally  */
 #include <omp.h>
+#endif
 
 #ifndef PI
 #define PI 3.141592653589793115998

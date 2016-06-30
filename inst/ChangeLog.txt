@@ -1,3 +1,9 @@
+Version 0.6.3
+-------------
+
+- omp.h is conditionally included depending on the OpenMP support of the target system
+
+
 Version 0.6.2
 -------------
 

@@ -1,6 +1,6 @@
 Package: STB
-Version: 0.6.2
-Date: 2016-06-17
+Version: 0.6.3
+Date: 2016-06-30
 Title: Simultaneous Tolerance Bounds
 Author: Andre Schuetzenmeister <andre.schuetzenmeister@roche.com>
 Maintainer: Andre Schuetzenmeister <andre.schuetzenmeister@roche.com>
@@ -12,6 +12,6 @@ Description: Provides an implementation of simultaneous tolerance bounds (STB), 
              (studentized, standardized, Pearson-type transformed) random variates (residuals, random effects), can be assessed employing STB-methodology. 
 License: GPL (>= 3)
 NeedsCompilation: yes
-Packaged: 2016-06-17 09:07:27 UTC; schueta6
+Packaged: 2016-06-30 10:32:21 UTC; schueta6
 Repository: CRAN
-Date/Publication: 2016-06-17 21:20:48
+Date/Publication: 2016-06-30 18:16:13
