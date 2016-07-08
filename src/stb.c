@@ -130,7 +130,9 @@ double coverage(double *mat, double *lower, double *upper, int nCol, int nRow, i
 {
 	int covered=0, check=0, i=0, j=0;
 	
+#ifdef _OPENMP
 	omp_set_num_threads(nCpu);									/* OpenMP support, set number of CPUs */
+#endif
 	
 	#pragma omp parallel for \
 			private(i, j) \
@@ -206,7 +208,9 @@ void getSTB(double *mat, int *nCol, int *nRow, double *alpha, double *tol, int *
 	*alpha = (*alpha)/2;
 	best_cov=1.0;
 	
+#ifdef _OPENMP
 	omp_set_num_threads(*nCpu);										/* set number of cores */
+#endif
 
 	while(check==1)
 	{

@@ -1,4 +1,4 @@
-4918f9ea000fe8df85626f6baca531b7 *DESCRIPTION
+cbf507f03ab6eefe42418304d444ea62 *DESCRIPTION
 abc5470e4066e6b1028d284a04f891bf *NAMESPACE
 0ec21e8cc3198c40194bb55e0202796b *R/stb.R
 bd543dcfa4526fa632ba6fee472b0a49 *inst/ChangeLog.txt
@@ -13,4 +13,4 @@ d7ef113a32fe2245dfea4daf32c87e25 *man/getSTB.Rd
 da69db3da9d14997aa93d35cc3aeb195 *man/stb.VCA.Rd
 80e59c6dcf40ca482dcf84710808be6e *man/stb.default.Rd
 95e3011e37d9dde0d75f3a3819b2acd3 *src/Makevars
-db8390470aee8f1b847e0015661bdf3c *src/stb.c
+12ba421abc10af5af54fd6de4c254e31 *src/stb.c
