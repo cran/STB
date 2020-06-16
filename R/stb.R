@@ -74,7 +74,7 @@
 #' 
 #' @seealso \link{plot.STB}
 #' 
-#' @S3method stb default
+#' @method stb default
 #'
 #' @references 
 #' 
@@ -226,7 +226,6 @@ stb.default <- function(obj, N=10000L, alpha=.05, rand.func=rnorm, tol=.0001, ma
 #' @author  Andre Schuetzenmeister \email{andre.schuetzenmeister@@roche.com}
 #' 
 #' @method plot STB
-#' @S3method plot STB
 #' 
 #' @seealso \link{stb}
 #' 
@@ -357,15 +356,15 @@ fastSTB <- function(mat, alpha=.05, tol=0.0001, max.iter=100L, Ncpu=2, timer=FAL
 
 #' Load/unload C-lib.
 
-.onLoad <- function(lib, pkg)
-{
-	library.dynam(chname="STB", package=pkg, lib.loc=lib)
-}
-
-.onUnload <- function(lib)
-{
-	library.dynam.unload(chname="STB", libpath=lib)
-}
+#.onLoad <- function(lib, pkg)
+#{
+#	library.dynam(chname="STB", package=pkg, lib.loc=lib)
+#}
+#
+#.onUnload <- function(lib)
+#{
+#	library.dynam.unload(chname="STB", libpath=lib)
+#}
 
 
 
@@ -762,7 +761,7 @@ SASquantile <- function(x, prob, tol=1e-12, type=c("R", "C"))
 #' # now click on points
 #' }
 #' 
-#' @S3method stb VCA
+#' @method stb VCA
 #' 
 #' @seealso \code{\link{fastSTB}}
 #' 
@@ -1087,7 +1086,6 @@ stb.VCA <- function(obj, term=NULL, mode=c("raw", "student", "standard", "pearso
 #' @seealso \link{stb.VCA}
 #' 
 #' @method plot stbVCA
-#' @S3method plot stbVCA
 #' 
 #' @examples 
 #' \dontrun{

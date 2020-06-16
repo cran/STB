@@ -4,11 +4,26 @@
 \alias{stb.VCA}
 \title{Simultaneous Tolerance Bounds on Residuals and Random Effects for 'VCA' Objects.}
 \usage{
-\method{stb}{VCA}(obj, term = NULL, mode = c("raw", "student", "standard",
-  "pearson"), N = 5000, alpha = 0.05, algo = c("rank", "R", "C"),
-  q.type = 2L, plot = TRUE, legend = TRUE, orient = 1, main1 = NULL,
-  main2 = NULL, seed = NULL, type = 1, pb = TRUE, parallel = TRUE,
-  Ncpu = 2, ...)
+\method{stb}{VCA}(
+  obj,
+  term = NULL,
+  mode = c("raw", "student", "standard", "pearson"),
+  N = 5000,
+  alpha = 0.05,
+  algo = c("rank", "R", "C"),
+  q.type = 2L,
+  plot = TRUE,
+  legend = TRUE,
+  orient = 1,
+  main1 = NULL,
+  main2 = NULL,
+  seed = NULL,
+  type = 1,
+  pb = TRUE,
+  parallel = TRUE,
+  Ncpu = 2,
+  ...
+)
 }
 \arguments{
 \item{obj}{(VCA) object}
@@ -194,9 +209,6 @@ stb.re.subj <- plot(stb.re.subj, pick=TRUE, type=3)
 }
 
 }
-\author{
-Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
-}
 \references{
 Schuetzenmeister, A. and Piepho, H.P. (2012). Residual analysis of linear mixed models using a simulation approach.
 Computational Statistics and Data Analysis, 56, 1405-1416
@@ -209,4 +221,6 @@ the general linear model using diagnostic plots. Communications in Statistics-Si
 
 \code{\link{fastSTB}}
 }
-
+\author{
+Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
+}

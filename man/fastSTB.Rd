@@ -4,8 +4,14 @@
 \alias{fastSTB}
 \title{Simultaneous Tolerance Bands Using a Fast C-Implementation.}
 \usage{
-fastSTB(mat, alpha = 0.05, tol = 1e-04, max.iter = 100L, Ncpu = 2,
-  timer = FALSE)
+fastSTB(
+  mat,
+  alpha = 0.05,
+  tol = 1e-04,
+  max.iter = 100L,
+  Ncpu = 2,
+  timer = FALSE
+)
 }
 \arguments{
 \item{mat}{(numeric) matrix with rows representing simulations of 'ncol' values, rows are supposed to be sorted}
@@ -52,9 +58,6 @@ is a R-implementation identical to the C-implementation used here.
  stb.obj4 <- fastSTB(mat, timer=TRUE, Ncpu=8)
 }
 }
-\author{
-Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
-}
 \references{
 Schuetzenmeister, A., Jensen, U., Piepho, H.P. (2011), Checking assumptions of normality and homoscedasticity in the general linear model. 
             Communications in Statistics - Simulation and Computation; S. 141-154
@@ -62,4 +65,6 @@ Schuetzenmeister, A., Jensen, U., Piepho, H.P. (2011), Checking assumptions of n
 \seealso{
 \link{getSTB} \link{stb}
 }
-
+\author{
+Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
+}

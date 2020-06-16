@@ -87,10 +87,9 @@ stb.obj4 <- plot(stb.obj3, type=3)
 plot(stb.obj4, sti.lpos="top", col="darkblue", out.pch=17, out.col="green") 
 }
 }
-\author{
-Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
-}
 \seealso{
 \link{stb.VCA}
 }
-
+\author{
+Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
+}

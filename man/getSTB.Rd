@@ -2,10 +2,20 @@
 % Please edit documentation in R/stb.R
 \name{getSTB}
 \alias{getSTB}
-\title{Simultaneous Tolerance Bands Using R-Implementation.}
+\title{Load/unload C-lib.
+Simultaneous Tolerance Bands Using R-Implementation.}
 \usage{
-getSTB(mat, alpha = 0.05, tol = 1e-04, max.iter = 100L, q.type = 2L,
-  logfile = NULL, output = TRUE, timer = FALSE, Ncpu = 2)
+getSTB(
+  mat,
+  alpha = 0.05,
+  tol = 1e-04,
+  max.iter = 100L,
+  q.type = 2L,
+  logfile = NULL,
+  output = TRUE,
+  timer = FALSE,
+  Ncpu = 2
+)
 }
 \arguments{
 \item{mat}{(numeric) matrix with nrow=N_simulation, ncol=N_points, where each row is sorted in increasing order}
@@ -54,9 +64,6 @@ stb.obj <- getSTB(mat, timer=TRUE)
 stb.obj$cov
 }
 }
-\author{
-Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
-}
 \references{
 Schuetzenmeister, A., Jensen, U., Piepho, H.P. (2011), Checking assumptions of normality and homoscedasticity in the general linear model. 
             Communications in Statistics - Simulation and Computation; S. 141-154
@@ -64,4 +71,6 @@ Schuetzenmeister, A., Jensen, U., Piepho, H.P. (2011), Checking assumptions of n
 \seealso{
 \link{fastSTB} \link{stb}
 }
-
+\author{
+Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
+}

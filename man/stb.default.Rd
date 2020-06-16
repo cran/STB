@@ -4,12 +4,32 @@
 \alias{stb.default}
 \title{Simultaneous Tolerance Bands (STB).}
 \usage{
-\method{stb}{default}(obj, N = 10000L, alpha = 0.05, rand.func = rnorm,
-  tol = 1e-04, max.iter = 100L, algo = c("rank", "C", "R"), Ncpu = 1,
-  q.type = 2L, stb.col = "#0000FF40", col.points = "black",
-  col.out = "red", col.pwb = "#0000FF40", main = NULL, add.pwb = FALSE,
-  quiet = FALSE, add = FALSE, plot = TRUE, legend = FALSE,
-  timer = FALSE, pch = 16, pch.out = 16, seed = NULL, ...)
+\method{stb}{default}(
+  obj,
+  N = 10000L,
+  alpha = 0.05,
+  rand.func = rnorm,
+  tol = 1e-04,
+  max.iter = 100L,
+  algo = c("rank", "C", "R"),
+  Ncpu = 1,
+  q.type = 2L,
+  stb.col = "#0000FF40",
+  col.points = "black",
+  col.out = "red",
+  col.pwb = "#0000FF40",
+  main = NULL,
+  add.pwb = FALSE,
+  quiet = FALSE,
+  add = FALSE,
+  plot = TRUE,
+  legend = FALSE,
+  timer = FALSE,
+  pch = 16,
+  pch.out = 16,
+  seed = NULL,
+  ...
+)
 }
 \arguments{
 \item{obj}{(numeric) vector, which is supposed to be N(my, sigma^2)-distributed}
@@ -131,9 +151,6 @@ stb(rnorm(30), add=TRUE)
 STB <- stb(rnorm(30), plot=FALSE)
 }
 }
-\author{
-Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
-}
 \references{
 Schuetzenmeister, A., Jensen, U., Piepho, H.P. (2011), Checking assumptions of normality and homoscedasticity in the general linear model. 
             Communications in Statistics - Simulation and Computation; S. 141-154
@@ -144,4 +161,6 @@ Computational Statistics and Data Analysis, 56, 1405-1416
 \seealso{
 \link{plot.STB}
 }
-
+\author{
+Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
+}

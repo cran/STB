@@ -32,8 +32,8 @@
 \details{\tabular{ll}{
 Package: \tab STB\cr
 Type: \tab Package\cr
-Version: \tab 0.6.3\cr
-Date: \tab 2016-06-30\cr
+Version: \tab 0.6.4\cr
+Date: \tab 2020-06-16\cr
 License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
 }}

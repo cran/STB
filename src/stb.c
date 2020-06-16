@@ -12,8 +12,9 @@
  *					82377 Penzberg / Germany													*
  *																								*																										*
  *				  																			    *
- * Last modified:	2016-06-30															        *
- *																								*				
+ * Last modified:	2016-07-04															        *
+ *																								*																					 
+ * - conditionally called function 	omp_set_num_threads() of OpenMP framework					*																	*				
  * - header file "omp.h" now included conditionally on the definition of "_OPENMP"				*
  * - added OpenMP based parallelization to coverage-computation and STB-computation             *	
  * - removed all unnecessary content before putting it on CRAN          			            *
@@ -130,14 +131,18 @@ double coverage(double *mat, double *lower, double *upper, int nCol, int nRow, i
 {
 	int covered=0, check=0, i=0, j=0;
 	
-#ifdef _OPENMP
+	#ifdef _OPENMP	
+	
 	omp_set_num_threads(nCpu);									/* OpenMP support, set number of CPUs */
-#endif
+	
+	#endif
 	
 	#pragma omp parallel for \
 			private(i, j) \
 			firstprivate(check, lower, upper, nCol, nRow)\
 			shared(mat, covered ) 								/* OpenMP parallelization */
+			
+
 	
 	for(i=0; i<nRow; i++)										/* over each simulated value of the j-th row */						
 	{
@@ -208,9 +213,11 @@ void getSTB(double *mat, int *nCol, int *nRow, double *alpha, double *tol, int *
 	*alpha = (*alpha)/2;
 	best_cov=1.0;
 	
-#ifdef _OPENMP
+	#ifdef _OPENMP
+	
 	omp_set_num_threads(*nCpu);										/* set number of cores */
-#endif
+	
+	#endif
 
 	while(check==1)
 	{

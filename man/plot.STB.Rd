@@ -35,10 +35,9 @@ obj$add <- TRUE
 plot(obj) 
 }
 }
-\author{
-Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
-}
 \seealso{
 \link{stb}
 }
-
+\author{
+Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
+}

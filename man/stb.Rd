@@ -19,4 +19,3 @@ is called and all its arguments may be specified. The latter was developed for n
 (see ?stb.default). Therefore this method will most likely produce strange results on other
 types of objects than \code{VCA} and numeric vectors.
 }
-

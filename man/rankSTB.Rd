@@ -63,11 +63,10 @@ system.time(stb.q.C  <- fastSTB(mat, Ncpu=10))
 system.time(stb.q.C  <- fastSTB(mat, Ncpu=12))
 }
 }
-\author{
-Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
-}
 \references{
 Schuetzenmeister, A. and Piepho, H.P. (2012). Residual analysis of linear mixed models using a simulation approach.
 Computational Statistics and Data Analysis, 56, 1405-1416
 }
-
+\author{
+Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}
+}
