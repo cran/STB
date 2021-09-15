@@ -1,9 +1,9 @@
-992ca500a3c6bf2f49dd6c71f0dec247 *DESCRIPTION
+1f287861ef28ef4aaf24a1b7e983e825 *DESCRIPTION
 a0418edfddf473c82339ed0201cc89f0 *NAMESPACE
 10ae0bab640102b93316ebc2bab7af4b *R/stb.R
-af6cf8a621fb07fb8e9e0bf6c68c9b3d *inst/ChangeLog.txt
+e803ce663804534d5225d7952a87eef4 *inst/ChangeLog.txt
 793dd5b607e55947cb30e0686b5a1702 *man/SASquantile.Rd
-ba5c8cf15ba98707aaefbafe1d155112 *man/STB-Package.Rd
+f304bd671a32574c736bf02a8cf99df9 *man/STB-Package.Rd
 bff52589af7a158514256f10047c099a *man/fastSTB.Rd
 0725d0995bafdee5b6e0180871aa0c76 *man/getSTB.Rd
 0cdaa1bd4a78cb6f00cfd8e01ae37001 *man/plot.STB.Rd
@@ -14,4 +14,4 @@ eaa7800ce9fcc67e3e4865ec68befc84 *man/stb.VCA.Rd
 6fab2203c33e55a606fae9ca3d56ce40 *man/stb.default.Rd
 95e3011e37d9dde0d75f3a3819b2acd3 *src/Makevars
 7c22b1b500cab25872924e218f1645f5 *src/registerDynamicSymbols.c
-b06922c138b32f25b4edf79550da710e *src/stb.c
+fbd357397535d8f62137899197c30242 *src/stb.c

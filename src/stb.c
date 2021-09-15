@@ -3,8 +3,8 @@
  * Compute simultaneous tolerance bounds for a matrix of random vectors representing the null	*
  * distribution, e.g. N(0,1). 																	*
  *			   																			        *
- * Author:			Dr. André Schützenmeister											        *
- *					Centralised and Point of Care Solutions										*
+ * Author:			Dr. Andre Schuetzenmeister											        *
+ *					Biostatistics & Data Science												*
  *																								*
  *					Roche Diagnostics GmbH														*
  *					DXREBC..6164																*
@@ -12,12 +12,9 @@
  *					82377 Penzberg / Germany													*
  *																								*																										*
  *				  																			    *
- * Last modified:	2016-07-04															        *
- *																								*																					 
- * - conditionally called function 	omp_set_num_threads() of OpenMP framework					*																	*				
- * - header file "omp.h" now included conditionally on the definition of "_OPENMP"				*
- * - added OpenMP based parallelization to coverage-computation and STB-computation             *	
- * - removed all unnecessary content before putting it on CRAN          			            *
+ * Last modified:	2021-09-14															        *
+ *																								*
+ * - include system headers before R headers to avoid problem with omp.h						*																					 
  *																								*
  ************************************************************************************************/
 
@@ -26,11 +23,11 @@
 #include <time.h>
 #include <stdlib.h>
 #include <assert.h>
-#include <R.h>
-#include <Rinternals.h>
 #ifdef _OPENMP				/* include omp.h conditionally  */
 #include <omp.h>
 #endif
+#include <R.h>
+#include <Rinternals.h>
 
 #ifndef PI
 #define PI 3.141592653589793115998
@@ -226,25 +223,25 @@ void getSTB(double *mat, int *nCol, int *nRow, double *alpha, double *tol, int *
 		#pragma omp parallel for\
 			shared(mat, lower, upper, Q)\
 			private(i,j,tmp_col)
-		for(i=0; i<*nCol; i++)																/* pont-wise tolerance limits */
+		for(i=0; i<*nCol; i++)											/* pont-wise tolerance limits */
 		{			
 			tmp_col = calloc(*nRow, sizeof(double));
 		
 			for(j=0;j<(*nRow);j++)
 			{
-				tmp_col[j] = mat[i*(*nRow)+j];										/* copy i-th col of the matrix 'mat'*/
+				tmp_col[j] = mat[i*(*nRow)+j];							/* copy i-th col of the matrix 'mat'*/
 			}
-			Q[i*2]=SASquantile(tmp_col, *alpha, *nRow, EPS);					/* 1st row */
+			Q[i*2]=SASquantile(tmp_col, *alpha, *nRow, EPS);			/* 1st row */
 			lower[i]=Q[i*2];
 			Q[i*2+1]=SASquantile(tmp_col, 1-(*alpha), *nRow, EPS);		/* 2nd row */
 			upper[i]=Q[i*2+1];
 			
 			free(tmp_col);
 		}	
-		*cov=coverage(mat, lower, upper, *nCol, *nRow, *nCpu);				/* compute coverage of current STB */
-		if(*cov >= include)																		/* at least 100(1-alpha)% coverage */
+		*cov=coverage(mat, lower, upper, *nCol, *nRow, *nCpu);			/* compute coverage of current STB */
+		if(*cov >= include)												/* at least 100(1-alpha)% coverage */
 		{
-			if(*cov < best_cov)																	/* coverage better than former result */
+			if(*cov < best_cov)											/* coverage better than former result */
 			{
 				//best_alpha = *alpha;
 				best_Q = Q;
@@ -255,16 +252,16 @@ void getSTB(double *mat, int *nCol, int *nRow, double *alpha, double *tol, int *
 		{ 
 			check = 0;
 		}
-		if( iter == *max_iter ) 															/* terminate if max number of iterations reached */
+		if( iter == *max_iter ) 										/* terminate if max number of iterations reached */
 		{
 			check = 0;
 		}
 				
 		if( abs_double(*cov - include) <= *tol &&  (*cov - include) >= 0 )
 		{
-			check = 0;																					/* convergence tolerance reached */
+			check = 0;													/* convergence tolerance reached */
 		}
-		else																									/* bisection step */
+		else															/* bisection step */
 		{
 			if( (*cov - include) < 0)
 			{

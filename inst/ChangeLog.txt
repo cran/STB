@@ -1,3 +1,8 @@
+Version 0.6.5
+-------------
+
+- solved issue with having included omp.h before R headers
+
 Version 0.6.4
 -------------
 

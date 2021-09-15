@@ -32,8 +32,8 @@
 \details{\tabular{ll}{
 Package: \tab STB\cr
 Type: \tab Package\cr
-Version: \tab 0.6.4\cr
-Date: \tab 2020-06-16\cr
+Version: \tab 0.6.5\cr
+Date: \tab 2021-09-14\cr
 License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
 }}
@@ -44,3 +44,4 @@ LazyLoad: \tab yes\cr
 	Schuetzenmeister, A. and Piepho, H.P. (2012). Residual analysis of linear mixed models using a simulation approach. Computational Statistics and Data Analysis, 56, 1405-1416
 }
 \keyword{package}
+
