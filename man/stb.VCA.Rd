@@ -33,7 +33,7 @@
 is a integer, it is interpreted as the i-th random term in 'obj$re.assign$terms'.}
 
 \item{mode}{(character) string specifying a possible transformation of random effects or 
-residuals (see \code{\link{residuals.VCA}} and \code{\link{ranef.VCA}}for details)}
+residuals (see \code{\link[VCA]{residuals.VCA}} and \code{\link[VCA]{ranef.VCA}}for details)}
 
 \item{N}{(integer) specifying the number of simulated datasets \eqn{y_sim}}
 
@@ -219,7 +219,7 @@ the general linear model using diagnostic plots. Communications in Statistics-Si
 \seealso{
 \code{\link{getSTB}}, \code{\link{fastSTB}}, \code{\link{rankSTB}}
 
-\code{\link{fastSTB}}
+
 }
 \author{
 Andre Schuetzenmeister \email{andre.schuetzenmeister@roche.com}

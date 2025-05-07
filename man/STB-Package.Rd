@@ -15,7 +15,7 @@
 	for details about simultaneous tolerance bounds (there, used for checking normality in the general linear model). 
 	Various other null-distributions can be checked, since resampling can be applied to all sorts of distributions (see  argument 'rand.func' of \code{\link{stb}}).\cr
 	
-	Besides checking distributional assumptions of numeric vectors, graphical methods are available for linear mixed models fitted using R-package \code{\link{VCA}}.
+	Besides checking distributional assumptions of numeric vectors, graphical methods are available for linear mixed models fitted using R-package \code{VCA}.
 	Various types of random variates exist in this framework, i.e. random effects and at least two types of residuals. All types of random variates of 
 	LMM need to be checked for their particular distributional assumptions. Departure from these may indicate that a transformation of the response variable 
 	is required or that extreme values (possible outliers) have a negative effect on the distribution of random variates. See the 2nd reference for
@@ -32,8 +32,8 @@
 \details{\tabular{ll}{
 Package: \tab STB\cr
 Type: \tab Package\cr
-Version: \tab 0.6.5\cr
-Date: \tab 2021-09-14\cr
+Version: \tab 0.6.6\cr
+Date: \tab 2025-05-06\cr
 License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
 }}

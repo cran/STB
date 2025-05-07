@@ -39,7 +39,7 @@
 #' @param alpha 		(numeric) value specifying the simultaneous tolerance level, i.e. 100(1-alpha)\% of all 'N'
 #'              		random samples have to be completely enclosed by the bounds of the STB
 #' @param rand.func 	(function) a function which generates random samples, e.g. \code{rand.func=rnorm} which corresponds to random
-#'                  	sampling from the standard normal distribution. Another example is defining func=function(n){rchisq(n=n, df=3, ncp=2)}
+#'                  	sampling from the standard normal distribution. Another example is defining 'sfunc=function(n) rchisq(n=n, df=3, ncp=2)'
 #'                  	and using \code{rand.func=func}. See examples for further examples.
 #' @param tol 			(numeric) value specifying the max. acceptable deviation from 'alpha' used in the bisection algorithm
 #' @param max.iter 		(integer) value specifying the max. number of iteration for finding the bounds of the STB
@@ -248,7 +248,7 @@ stb.default <- function(obj, N=10000L, alpha=.05, rand.func=rnorm, tol=.0001, ma
 plot.STB <- function(x, ...)
 {
     obj <- x
-    stopifnot(class(obj) == "STB")
+    stopifnot(is(obj, "STB"))
     N <- length(obj$means)
     if(!obj$add)
         plot(obj$means[-c(1,N)], obj$means[-c(1,N)], ylim=c(min(obj$Q[1,-1]), max(obj$Q[2,-N])), 
@@ -425,7 +425,7 @@ getSTB <- function( mat, alpha=.05, tol=.0001, max.iter=100L, q.type=2L, logfile
 	stopifnot(is.logical(timer))
 	stopifnot(is.logical(output))
 	
-    if( !is.null(logfile) && class(logfile) == "character" && length(logfile) > 0)
+    if( !is.null(logfile) && is(logfile, "character") && length(logfile) > 0)
         file.remove( logfile )
     check <- TRUE
     include <- 1-alpha                                                                          # requested confidence limit
@@ -461,7 +461,7 @@ getSTB <- function( mat, alpha=.05, tol=.0001, max.iter=100L, q.type=2L, logfile
                 best.cov <- coverage
             }
         }
-        if( !is.null(logfile) && class(logfile) == "character" && length(logfile) > 0){           # create or update logfile
+        if( !is.null(logfile) && is(logfile, "character") && length(logfile) > 0){           # create or update logfile
             if( file.exists(logfile) ){                                                           # update
                 line <- paste(iter, alpha, alpha.old, abs(alpha-alpha.old)/2, (coverage * 100), coverage - include, sep="\t" )
                 cat( line, file=logfile, append=TRUE, sep="\n" )
@@ -478,7 +478,7 @@ getSTB <- function( mat, alpha=.05, tol=.0001, max.iter=100L, q.type=2L, logfile
                 close(pb)
                 cat(paste(best.cov*100,"%", sep=""),"of",nrow(mat),"simulations covered simultaneously.\n\n")
             }
-            if(!is.null(logfile) && class(logfile) == "character")
+            if(!is.null(logfile) && is(logfile, "character"))
                 cat("\nAlgorithm stopped because the value abs(alpha-alpha.old)/2 == 0!\n", file=logfile, append=TRUE, sep="\n" )
             if(timer)
                 print(Sys.time()-t1)
@@ -501,7 +501,7 @@ getSTB <- function( mat, alpha=.05, tol=.0001, max.iter=100L, q.type=2L, logfile
                 close(pb)
                 cat("\n\n",(coverage*100),"% of",nrow(mat),"simulated samples simultaneously covered.\n\n")
             }
-            if(!is.null(logfile) && class(logfile) == "character")
+            if(!is.null(logfile) && is(logfile, "character"))
                 cat(paste("\n\nAlgorithm terminated because the tolerance ",tol," was reached.", sep=""), file=logfile, append=TRUE, sep="\n" )
             if(timer)
                 print(Sys.time()-t1)
@@ -635,7 +635,7 @@ SASquantile <- function(x, prob, tol=1e-12, type=c("R", "C"))
 #' 						"marginal"), or, the name of a random term (one of obj$re.assign$terms). If 'term'
 #' 						is a integer, it is interpreted as the i-th random term in 'obj$re.assign$terms'. 
 #' @param mode			(character) string specifying a possible transformation of random effects or 
-#'                      residuals (see \code{\link{residuals.VCA}} and \code{\link{ranef.VCA}}for details)
+#'                      residuals (see \code{\link[VCA]{residuals.VCA}} and \code{\link[VCA]{ranef.VCA}}for details)
 #' @param N				(integer) specifying the number of simulated datasets \eqn{y_sim}
 #' @param alpha			(numeric) value 0 < alpha < 1 specifying the min. 100(1-alpha)\% coverage of the
 #'                      simultaneous tolerance band (STB)
@@ -763,7 +763,7 @@ SASquantile <- function(x, prob, tol=1e-12, type=c("R", "C"))
 #' 
 #' @method stb VCA
 #' 
-#' @seealso \code{\link{fastSTB}}
+#' @seealso \code{fastSTB}}
 #' 
 #' @references 
 #' 
@@ -777,7 +777,7 @@ stb.VCA <- function(obj, term=NULL, mode=c("raw", "student", "standard", "pearso
 					N=5000, alpha=.05, algo=c("rank", "R", "C"), q.type=2L, plot=TRUE, legend=TRUE, orient=1, main1=NULL, 
 					main2=NULL, seed=NULL, type=1, pb=TRUE, parallel=TRUE, Ncpu=2, ...)
 {
-	stopifnot(class(obj) == "VCA")
+	stopifnot(is(obj, "VCA"))
 	stopifnot(orient %in% 1:2)
 	stopifnot(!is.null(term))
 	stopifnot(type %in% 1:3)
@@ -1135,7 +1135,7 @@ plot.stbVCA <- function(x, orient=1, pick=FALSE, type=NULL, ...)
 		XLIM <- args[["xlim"]]
 	
 	obj <- x
-	stopifnot(class(obj) == "stbVCA")
+	stopifnot(is(obj, "stbVCA"))
 	
 	if(type == 3)
 		old.par <- par(mfrow=c(1,2))
@@ -1363,7 +1363,7 @@ plot.stbVCA <- function(x, orient=1, pick=FALSE, type=NULL, ...)
 #' 
 #' This implementation also corrects step 4) of the published algorithm, which has to find those indices of elements being
 #' equal to "min(c)" OR being equal to "N-min(c)+1". This reflects the construction of vector "c", where max. rank-values
-#' are transformed to min. rank-values. In step 6) the "N_{k-1}-(1-alpha)*N largest" elements of "d_{l}^{theta}" have to
+#' are transformed to min. rank-values. In step 6) the "N_k-1-(1-alpha)*N largest" elements of "d_l^theta" have to
 #' be selected, which needs also correction.
 #' 
 #' Parallel processing did not minimize the computation time in contrast to the algorithms for computing the quantile-based algorithm.

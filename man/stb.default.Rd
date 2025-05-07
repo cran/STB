@@ -40,7 +40,7 @@
 random samples have to be completely enclosed by the bounds of the STB}
 
 \item{rand.func}{(function) a function which generates random samples, e.g. \code{rand.func=rnorm} which corresponds to random
-sampling from the standard normal distribution. Another example is defining func=function(n){rchisq(n=n, df=3, ncp=2)}
+sampling from the standard normal distribution. Another example is defining 'sfunc=function(n) rchisq(n=n, df=3, ncp=2)'
 and using \code{rand.func=func}. See examples for further examples.}
 
 \item{tol}{(numeric) value specifying the max. acceptable deviation from 'alpha' used in the bisection algorithm}

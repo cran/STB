@@ -28,7 +28,7 @@ extreme-values per order-statistic (column).
 
 This implementation also corrects step 4) of the published algorithm, which has to find those indices of elements being
 equal to "min(c)" OR being equal to "N-min(c)+1". This reflects the construction of vector "c", where max. rank-values
-are transformed to min. rank-values. In step 6) the "N_{k-1}-(1-alpha)*N largest" elements of "d_{l}^{theta}" have to
+are transformed to min. rank-values. In step 6) the "N_k-1-(1-alpha)*N largest" elements of "d_l^theta" have to
 be selected, which needs also correction.
 
 Parallel processing did not minimize the computation time in contrast to the algorithms for computing the quantile-based algorithm.
